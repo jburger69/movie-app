@@ -3,9 +3,17 @@ body {
     color: #ffffff;
 }
 
+html {
+    margin: 50px;
+}
+
 .movie-app > .row {
     overflow-x: auto;
     flex-wrap: nowrap;
+}
+
+.row>* {
+    width: 25%;
 }
 
 .image-container {
@@ -25,7 +33,7 @@ body {
 .overlay {
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
-    width: 100%;
+    width: 85%;
     transition: 0.5s ease;
     opacity: 0;
     bottom: 0;
