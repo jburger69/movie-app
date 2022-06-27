@@ -48,7 +48,12 @@ function App() {
           />
         </div>
         <div className='row d-flex align-items-center mt-4 mb-4'>
-          <MovielistHeader />
+          <MovielistHeader heading="Favorites"/> 
+        </div>
+        <div className='row'>
+          <MovieList
+            movies={favorites}
+          />
         </div>
       </div>
     </div>
