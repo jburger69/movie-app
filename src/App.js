@@ -28,9 +28,14 @@ function App() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("react-movie-app-favorites", JSON.stringify(items));
+  }
+
   const AddFavoriteMovie = (movie) => {
     const newFavoriteList = [...favorites, movie];
     setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList);
   }
 
   const removeFavoriteMovie = (movie) => {
