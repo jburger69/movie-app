@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import MovielistHeader from './components/MovielistHeader';
 import SearchBox from './components/SearchBox';
 import AddFavorites from './components/AddFavorites';
+import RemoveFavorites from './components/RemoveFavorites';
 
 function App() {
 
@@ -32,6 +33,12 @@ function App() {
     setFavorites(newFavoriteList);
   }
 
+  const removeFavoriteMovie = (movie) => {
+    const newFavoriteList = favorites.filter(
+      (favorite) => favorite.imdbID !== movie.imdbID
+    );
+  }
+
 
   return (
     <div className="App">
@@ -53,6 +60,8 @@ function App() {
         <div className='row'>
           <MovieList
             movies={favorites}
+            handleFavoritesClick={removeFavoriteMovie}
+            favoriteComponent={RemoveFavorites}
           />
         </div>
       </div>
